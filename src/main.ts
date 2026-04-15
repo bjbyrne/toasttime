@@ -7,12 +7,13 @@ if (started) {
 }
 
 const createWindow = () => {
+  const isMac = process.platform === 'darwin';
   const mainWindow = new BrowserWindow({
     width: 420,
-    height: 580,
+    height: isMac ? 580 : 620,
     resizable: false,
     alwaysOnTop: true,
-    titleBarStyle: 'hiddenInset',
+    titleBarStyle: isMac ? 'hiddenInset' : 'default',
     backgroundColor: '#111827',
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
