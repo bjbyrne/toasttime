@@ -25,7 +25,7 @@ export function TimerDisplay({ elapsed, lightState }: TimerDisplayProps) {
     <div className="flex flex-col items-center">
       <span
         className={[
-          'font-mono text-7xl font-bold tabular-nums tracking-tight transition-colors duration-300',
+          'font-mono text-5xl font-bold tabular-nums tracking-tight transition-colors duration-300',
           COLOR_MAP[lightState],
           lightState === 'overtime' ? 'light-pulse' : '',
         ].join(' ')}

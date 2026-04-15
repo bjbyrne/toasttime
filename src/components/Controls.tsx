@@ -24,21 +24,21 @@ export function Controls({
         {status === 'running' ? (
           <button
             onClick={onPause}
-            className="flex-1 bg-yellow-600 hover:bg-yellow-500 active:bg-yellow-700 text-white font-semibold py-3 rounded-xl transition-colors text-sm"
+            className="flex-1 bg-yellow-600 hover:bg-yellow-500 active:bg-yellow-700 text-white font-semibold py-2 rounded-lg transition-colors text-xs"
           >
             Pause
           </button>
         ) : (
           <button
             onClick={onStart}
-            className="flex-1 bg-green-600 hover:bg-green-500 active:bg-green-700 text-white font-semibold py-3 rounded-xl transition-colors text-sm"
+            className="flex-1 bg-green-600 hover:bg-green-500 active:bg-green-700 text-white font-semibold py-2 rounded-lg transition-colors text-xs"
           >
             {status === 'paused' ? 'Resume' : 'Start'}
           </button>
         )}
         <button
           onClick={onReset}
-          className="flex-1 bg-gray-700 hover:bg-gray-600 active:bg-gray-800 text-white font-semibold py-3 rounded-xl transition-colors text-sm"
+          className="flex-1 bg-gray-700 hover:bg-gray-600 active:bg-gray-800 text-white font-semibold py-2 rounded-lg transition-colors text-xs"
         >
           Reset
         </button>
@@ -46,7 +46,7 @@ export function Controls({
 
       {/* Grace Period Toggle */}
       <label className="flex items-center justify-between cursor-pointer select-none">
-        <span className="text-gray-400 text-xs font-semibold uppercase tracking-widest">
+        <span className="text-gray-400 text-[10px] font-semibold uppercase tracking-widest">
           30s grace after Red
         </span>
         <div

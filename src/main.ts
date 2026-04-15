@@ -9,8 +9,8 @@ if (started) {
 const createWindow = () => {
   const isMac = process.platform === 'darwin';
   const mainWindow = new BrowserWindow({
-    width: 420,
-    height: isMac ? 520 : 555,
+    width: 300,
+    height: isMac ? 390 : 425,
     resizable: false,
     alwaysOnTop: true,
     titleBarStyle: isMac ? 'hiddenInset' : 'default',

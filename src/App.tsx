@@ -36,22 +36,22 @@ export default function App() {
   }
 
   return (
-    <div className="bg-gray-950 text-white flex flex-col items-center gap-4 p-4 select-none">
+    <div className="bg-gray-950 text-white flex flex-col items-center gap-2 p-3 select-none">
       {/* Header */}
       <div className="w-full text-center">
-        <h1 className="text-sm font-semibold uppercase tracking-[0.25em] text-gray-500">
+        <h1 className="text-xs font-semibold uppercase tracking-[0.2em] text-gray-500">
           Toastmasters Timer
         </h1>
       </div>
 
       {/* Main area: traffic light above timer */}
-      <div className="flex flex-col items-center gap-4">
+      <div className="flex flex-col items-center gap-2">
         <TrafficLight lightState={lightState} />
         <TimerDisplay elapsed={elapsed} lightState={lightState} />
       </div>
 
       {/* Bottom controls */}
-      <div className="flex flex-col gap-3 w-full">
+      <div className="flex flex-col gap-2 w-full">
         <RoleSelector
           selectedId={role.id}
           onChange={handleRoleChange}

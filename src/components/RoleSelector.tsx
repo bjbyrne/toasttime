@@ -18,7 +18,7 @@ export function RoleSelector({ selectedId, onChange, disabled }: RoleSelectorPro
 
   return (
     <div className="flex flex-col gap-2 w-full">
-      <label className="text-gray-400 text-xs font-semibold uppercase tracking-widest">
+      <label className="text-gray-400 text-[10px] font-semibold uppercase tracking-widest">
         Speech Role
       </label>
       <select
@@ -28,7 +28,7 @@ export function RoleSelector({ selectedId, onChange, disabled }: RoleSelectorPro
           const role = SPEECH_ROLES.find((r) => r.id === e.target.value)!;
           onChange(role);
         }}
-        className="w-full bg-gray-800 text-white border border-gray-600 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-blue-500 disabled:opacity-50 disabled:cursor-not-allowed"
+        className="w-full bg-gray-800 text-white border border-gray-600 rounded-lg px-2 py-1 text-xs focus:outline-none focus:border-blue-500 disabled:opacity-50 disabled:cursor-not-allowed"
       >
         {SPEECH_ROLES.map((role) => (
           <option key={role.id} value={role.id}>
@@ -37,7 +37,7 @@ export function RoleSelector({ selectedId, onChange, disabled }: RoleSelectorPro
         ))}
       </select>
       {selectedId !== 'custom' && (
-        <div className="flex gap-3 text-xs text-gray-500 font-mono">
+        <div className="flex gap-2 text-[10px] text-gray-500 font-mono">
           <span className="text-green-500">● {formatThreshold(selected.green)}</span>
           <span className="text-yellow-500">● {formatThreshold(selected.yellow)}</span>
           <span className="text-red-500">● {formatThreshold(selected.red)}</span>
