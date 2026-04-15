@@ -28,7 +28,7 @@ const LIGHTS = [
 
 export function TrafficLight({ lightState }: TrafficLightProps) {
   return (
-    <div className="flex flex-col items-center gap-3 bg-gray-900 rounded-2xl px-5 py-6 border border-gray-700">
+    <div className="flex flex-row items-center gap-6 bg-gray-900 rounded-2xl px-8 py-4 border border-gray-700">
       {LIGHTS.map(({ state, activeColor, glowColor, label }) => {
         const isActive =
           lightState === state ||

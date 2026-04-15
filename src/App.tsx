@@ -36,7 +36,7 @@ export default function App() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-950 text-white flex flex-col items-center justify-between p-5 pt-8 select-none">
+    <div className="bg-gray-950 text-white flex flex-col items-center gap-4 p-4 select-none">
       {/* Header */}
       <div className="w-full text-center">
         <h1 className="text-sm font-semibold uppercase tracking-[0.25em] text-gray-500">
@@ -44,14 +44,14 @@ export default function App() {
         </h1>
       </div>
 
-      {/* Main area: traffic light + timer */}
-      <div className="flex items-center gap-6">
+      {/* Main area: traffic light above timer */}
+      <div className="flex flex-col items-center gap-4">
         <TrafficLight lightState={lightState} />
         <TimerDisplay elapsed={elapsed} lightState={lightState} />
       </div>
 
       {/* Bottom controls */}
-      <div className="flex flex-col gap-4 w-full">
+      <div className="flex flex-col gap-3 w-full">
         <RoleSelector
           selectedId={role.id}
           onChange={handleRoleChange}
