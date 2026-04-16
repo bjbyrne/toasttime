@@ -1,0 +1,55 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+  <!-- Alt 4: Warm/fun — cute toast face with clock eyes, traffic light smile -->
+  <defs>
+    <linearGradient id="bg4" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#7C3AED"/>
+      <stop offset="100%" stop-color="#4C1D95"/>
+    </linearGradient>
+    <linearGradient id="toast4" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FEF3C7"/>
+      <stop offset="40%" stop-color="#FCD34D"/>
+      <stop offset="100%" stop-color="#D97706"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1024" height="1024" rx="200" fill="url(#bg4)"/>
+
+  <!-- Toast body -->
+  <rect x="162" y="300" width="700" height="580" rx="50" fill="url(#toast4)"/>
+  <!-- Toast dome top -->
+  <ellipse cx="512" cy="300" rx="350" ry="155" fill="url(#toast4)"/>
+  <!-- Crust border -->
+  <rect x="162" y="300" width="700" height="580" rx="50" fill="none" stroke="#B45309" stroke-width="24"/>
+  <ellipse cx="512" cy="300" rx="350" ry="155" fill="none" stroke="#B45309" stroke-width="24"/>
+  <!-- Crust fill bottom -->
+  <rect x="162" y="820" width="700" height="60" rx="30" fill="#92400E"/>
+
+  <!-- Clock face left eye -->
+  <circle cx="370" cy="480" r="110" fill="white" stroke="#92400E" stroke-width="10"/>
+  <line x1="370" y1="385" x2="370" y2="410" stroke="#78350F" stroke-width="9" stroke-linecap="round"/>
+  <line x1="370" y1="550" x2="370" y2="575" stroke="#78350F" stroke-width="9" stroke-linecap="round"/>
+  <line x1="275" y1="480" x2="300" y2="480" stroke="#78350F" stroke-width="9" stroke-linecap="round"/>
+  <line x1="440" y1="480" x2="465" y2="480" stroke="#78350F" stroke-width="9" stroke-linecap="round"/>
+  <!-- Left eye hands -->
+  <line x1="370" y1="480" x2="340" y2="425" stroke="#1C1917" stroke-width="12" stroke-linecap="round"/>
+  <line x1="370" y1="480" x2="415" y2="435" stroke="#1C1917" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="370" cy="480" r="10" fill="#1C1917"/>
+
+  <!-- Clock face right eye -->
+  <circle cx="654" cy="480" r="110" fill="white" stroke="#92400E" stroke-width="10"/>
+  <line x1="654" y1="385" x2="654" y2="410" stroke="#78350F" stroke-width="9" stroke-linecap="round"/>
+  <line x1="654" y1="550" x2="654" y2="575" stroke="#78350F" stroke-width="9" stroke-linecap="round"/>
+  <line x1="559" y1="480" x2="584" y2="480" stroke="#78350F" stroke-width="9" stroke-linecap="round"/>
+  <line x1="724" y1="480" x2="749" y2="480" stroke="#78350F" stroke-width="9" stroke-linecap="round"/>
+  <!-- Right eye hands (slightly different time) -->
+  <line x1="654" y1="480" x2="625" y2="425" stroke="#1C1917" stroke-width="12" stroke-linecap="round"/>
+  <line x1="654" y1="480" x2="700" y2="430" stroke="#1C1917" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="654" cy="480" r="10" fill="#1C1917"/>
+
+  <!-- Traffic light smile -->
+  <circle cx="352" cy="710" r="42" fill="#16A34A"/>
+  <circle cx="512" cy="710" r="42" fill="#EAB308"/>
+  <circle cx="672" cy="710" r="42" fill="#DC2626"/>
+  <!-- Smile curve connecting them -->
+  <path d="M 310 710 Q 512 790 714 710" stroke="#92400E" stroke-width="14" fill="none" stroke-linecap="round"/>
+</svg>

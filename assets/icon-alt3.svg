@@ -1,0 +1,59 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+  <!-- Alt 3: Green/clean — speech podium timer feel, stopwatch style -->
+  <defs>
+    <linearGradient id="bg3" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#064E3B"/>
+      <stop offset="100%" stop-color="#022C22"/>
+    </linearGradient>
+    <linearGradient id="toast3" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FDE68A"/>
+      <stop offset="100%" stop-color="#F59E0B"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1024" height="1024" rx="200" fill="url(#bg3)"/>
+
+  <!-- Stopwatch body (outer ring) -->
+  <circle cx="512" cy="560" r="350" fill="#065F46" stroke="#10B981" stroke-width="12"/>
+  <!-- Stopwatch crown (button at top) -->
+  <rect x="468" y="155" width="88" height="55" rx="20" fill="#10B981"/>
+  <!-- Stopwatch side button -->
+  <rect x="845" y="340" width="55" height="35" rx="12" fill="#10B981"/>
+
+  <!-- Clock face -->
+  <circle cx="512" cy="560" r="300" fill="#F0FDF4"/>
+
+  <!-- Toast slice silhouette inside clock -->
+  <rect x="362" y="450" width="300" height="240" rx="20" fill="url(#toast3)" opacity="0.25"/>
+  <ellipse cx="512" cy="450" rx="150" ry="65" fill="url(#toast3)" opacity="0.25"/>
+
+  <!-- Hour marks (green) -->
+  <line x1="512" y1="270" x2="512" y2="310" stroke="#065F46" stroke-width="16" stroke-linecap="round"/>
+  <line x1="802" y1="560" x2="762" y2="560" stroke="#065F46" stroke-width="16" stroke-linecap="round"/>
+  <line x1="512" y1="850" x2="512" y2="810" stroke="#065F46" stroke-width="16" stroke-linecap="round"/>
+  <line x1="222" y1="560" x2="262" y2="560" stroke="#065F46" stroke-width="16" stroke-linecap="round"/>
+
+  <!-- Minute marks -->
+  <line x1="620" y1="277" x2="611" y2="293" stroke="#6EE7B7" stroke-width="7" stroke-linecap="round"/>
+  <line x1="710" y1="365" x2="696" y2="374" stroke="#6EE7B7" stroke-width="7" stroke-linecap="round"/>
+  <line x1="795" y1="668" x2="779" y2="659" stroke="#6EE7B7" stroke-width="7" stroke-linecap="round"/>
+  <line x1="710" y1="755" x2="696" y2="746" stroke="#6EE7B7" stroke-width="7" stroke-linecap="round"/>
+  <line x1="620" y1="843" x2="611" y2="827" stroke="#6EE7B7" stroke-width="7" stroke-linecap="round"/>
+  <line x1="404" y1="843" x2="413" y2="827" stroke="#6EE7B7" stroke-width="7" stroke-linecap="round"/>
+  <line x1="314" y1="755" x2="328" y2="746" stroke="#6EE7B7" stroke-width="7" stroke-linecap="round"/>
+  <line x1="229" y1="668" x2="245" y2="659" stroke="#6EE7B7" stroke-width="7" stroke-linecap="round"/>
+  <line x1="229" y1="452" x2="245" y2="461" stroke="#6EE7B7" stroke-width="7" stroke-linecap="round"/>
+  <line x1="314" y1="365" x2="328" y2="374" stroke="#6EE7B7" stroke-width="7" stroke-linecap="round"/>
+  <line x1="404" y1="277" x2="413" y2="293" stroke="#6EE7B7" stroke-width="7" stroke-linecap="round"/>
+
+  <!-- Hour hand -->
+  <line x1="512" y1="560" x2="430" y2="450" stroke="#065F46" stroke-width="22" stroke-linecap="round"/>
+  <!-- Minute hand -->
+  <line x1="512" y1="560" x2="595" y2="405" stroke="#065F46" stroke-width="14" stroke-linecap="round"/>
+  <!-- Second hand -->
+  <line x1="512" y1="560" x2="512" y2="720" stroke="#EF4444" stroke-width="6" stroke-linecap="round"/>
+  <line x1="512" y1="560" x2="512" y2="490" stroke="#EF4444" stroke-width="6" stroke-linecap="round"/>
+
+  <circle cx="512" cy="560" r="16" fill="#065F46"/>
+  <circle cx="512" cy="560" r="7" fill="#10B981"/>
+</svg>

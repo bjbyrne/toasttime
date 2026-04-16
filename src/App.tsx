@@ -6,74 +6,114 @@ import { TimerDisplay } from './components/TimerDisplay';
 import { RoleSelector } from './components/RoleSelector';
 import { CustomTimings } from './components/CustomTimings';
 import { Controls } from './components/Controls';
+import { About } from './components/About';
+
+function calcAutoWarn(green: number, red: number): number {
+  // Round midpoint to nearest 15s
+  return Math.round((green + red) / 2 / 15) * 15;
+}
 
 export default function App() {
-  const [role, setRole] = useState<SpeechRole>(SPEECH_ROLES[0]);
-  const [customGreen, setCustomGreen] = useState(60);
-  const [customYellow, setCustomYellow] = useState(90);
-  const [customRed, setCustomRed] = useState(120);
+  const [roleId, setRoleId] = useState(SPEECH_ROLES[0].id);
+  const [thresholds, setThresholds] = useState({
+    green: SPEECH_ROLES[0].green,
+    yellow: SPEECH_ROLES[0].yellow,
+    red: SPEECH_ROLES[0].red,
+  });
   const [gracePeriod, setGracePeriod] = useState(true);
+  const [autoWarn, setAutoWarn] = useState(true);
+  const [showAbout, setShowAbout] = useState(false);
 
-  const thresholds =
-    role.id === 'custom'
-      ? { green: customGreen, yellow: customYellow, red: customRed }
-      : { green: role.green, yellow: role.yellow, red: role.red };
+  // When autoWarn is on, override yellow with the calculated midpoint
+  const effectiveThresholds = autoWarn
+    ? { ...thresholds, yellow: calcAutoWarn(thresholds.green, thresholds.red) }
+    : thresholds;
 
-  const { elapsed, status, lightState, start, pause, reset } = useTimer(
-    thresholds,
-    gracePeriod,
-  );
+  const { elapsed, status, lightState, start, pause, reset } = useTimer(effectiveThresholds, gracePeriod);
 
-  function handleRoleChange(newRole: SpeechRole) {
+  const invalidThresholds =
+    thresholds.green >= thresholds.red ||
+    (!autoWarn && (effectiveThresholds.green >= effectiveThresholds.yellow || effectiveThresholds.yellow >= effectiveThresholds.red));
+
+  function handleRoleChange(role: SpeechRole) {
     reset();
-    setRole(newRole);
+    setRoleId(role.id);
+    if (role.id !== 'custom') {
+      setThresholds({ green: role.green, yellow: role.yellow, red: role.red });
+    }
   }
 
-  function handleCustomChange(g: number, y: number, r: number) {
-    setCustomGreen(g);
-    setCustomYellow(y);
-    setCustomRed(r);
+  function handleThresholdChange(green: number, yellow: number, red: number) {
+    setThresholds({ green, yellow, red });
+    setRoleId('custom');
+  }
+
+  function handleAutoWarnChange(value: boolean) {
+    setAutoWarn(value);
+    // When turning auto off, seed yellow with the current calculated value
+    if (!value) {
+      setThresholds(t => ({ ...t, yellow: calcAutoWarn(t.green, t.red) }));
+    }
+  }
+
+  if (showAbout) {
+    return <About onClose={() => setShowAbout(false)} lightState={lightState} elapsed={elapsed} status={status} />;
   }
 
   return (
     <div className="bg-gray-950 text-white flex flex-col items-center gap-2 p-3 select-none">
-      {/* Header */}
-      <div className="w-full text-center">
+      {/* Header — drag region with info button */}
+      <div
+        className="w-full flex items-center justify-between cursor-grab"
+        style={{ WebkitAppRegion: 'drag' } as React.CSSProperties}
+      >
+        <div className="w-5" />
         <h1 className="text-xs font-semibold uppercase tracking-[0.2em] text-gray-500">
-          Toastmasters Timer
+          ToastTime ⠿
         </h1>
+        <button
+          onClick={() => setShowAbout(true)}
+          style={{ WebkitAppRegion: 'no-drag' } as React.CSSProperties}
+          className="w-5 h-5 rounded-full border border-gray-600 text-gray-500 hover:text-white hover:border-gray-400 text-[10px] font-bold leading-none flex items-center justify-center transition-colors"
+        >
+          i
+        </button>
       </div>
 
-      {/* Main area: traffic light above timer */}
+      {/* Traffic lights + timer */}
       <div className="flex flex-col items-center gap-2">
         <TrafficLight lightState={lightState} />
         <TimerDisplay elapsed={elapsed} lightState={lightState} />
       </div>
 
-      {/* Bottom controls */}
-      <div className="flex flex-col gap-2 w-full">
+      {/* Controls */}
+      <div className="flex flex-col gap-1.5 w-full">
+        <CustomTimings
+          green={thresholds.green}
+          yellow={effectiveThresholds.yellow}
+          red={thresholds.red}
+          autoWarn={autoWarn}
+          onChange={handleThresholdChange}
+          disabled={status === 'running'}
+        />
         <RoleSelector
-          selectedId={role.id}
+          selectedId={roleId}
           onChange={handleRoleChange}
           disabled={status === 'running'}
         />
-        {role.id === 'custom' && (
-          <CustomTimings
-            green={customGreen}
-            yellow={customYellow}
-            red={customRed}
-            onChange={handleCustomChange}
-            disabled={status === 'running'}
+        <div className="mt-2">
+          <Controls
+            status={status}
+            gracePeriod={gracePeriod}
+            autoWarn={autoWarn}
+            invalidThresholds={invalidThresholds}
+            onStart={start}
+            onPause={pause}
+            onReset={reset}
+            onGracePeriodChange={setGracePeriod}
+            onAutoWarnChange={handleAutoWarnChange}
           />
-        )}
-        <Controls
-          status={status}
-          gracePeriod={gracePeriod}
-          onStart={start}
-          onPause={pause}
-          onReset={reset}
-          onGracePeriodChange={setGracePeriod}
-        />
+        </div>
       </div>
     </div>
   );

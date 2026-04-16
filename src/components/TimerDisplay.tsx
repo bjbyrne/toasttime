@@ -16,8 +16,8 @@ const COLOR_MAP: Record<LightState, string> = {
   none: 'text-gray-300',
   green: 'text-green-400',
   yellow: 'text-yellow-400',
-  red: 'text-red-400',
-  overtime: 'text-red-400',
+  red: 'text-red-500',
+  overtime: 'text-red-500',
 };
 
 export function TimerDisplay({ elapsed, lightState }: TimerDisplayProps) {

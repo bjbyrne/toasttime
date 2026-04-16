@@ -10,19 +10,19 @@ const LIGHTS = [
     state: 'green' as LightState,
     activeColor: 'bg-green-400',
     glowColor: 'shadow-[0_0_20px_6px_rgba(74,222,128,0.8)]',
-    label: 'GO',
+    label: 'MIN',
   },
   {
     state: 'yellow' as LightState,
     activeColor: 'bg-yellow-400',
     glowColor: 'shadow-[0_0_20px_6px_rgba(250,204,21,0.8)]',
-    label: 'MID',
+    label: 'WARN',
   },
   {
     state: 'red' as LightState,
     activeColor: 'bg-red-500',
     glowColor: 'shadow-[0_0_20px_6px_rgba(239,68,68,0.8)]',
-    label: 'STOP',
+    label: 'MAX',
   },
 ];
 

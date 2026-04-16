@@ -1,0 +1,63 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+  <!-- Alt 2: Bold clock face with toast popping out the top, bright/playful -->
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#1E293B"/>
+    </linearGradient>
+    <linearGradient id="toast2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FEF3C7"/>
+      <stop offset="50%" stop-color="#FBBF24"/>
+      <stop offset="100%" stop-color="#B45309"/>
+    </linearGradient>
+    <linearGradient id="clockFace" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F8FAFC"/>
+      <stop offset="100%" stop-color="#E2E8F0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1024" height="1024" rx="200" fill="url(#bg2)"/>
+
+  <!-- Toast slice emerging from top of clock (popping up) -->
+  <rect x="370" y="80" width="284" height="360" rx="30" fill="url(#toast2)"/>
+  <ellipse cx="512" cy="80" rx="142" ry="70" fill="url(#toast2)"/>
+  <!-- Toast crust sides -->
+  <rect x="370" y="80" width="30" height="360" rx="15" fill="#92400E" opacity="0.7"/>
+  <rect x="624" y="80" width="30" height="360" rx="15" fill="#92400E" opacity="0.7"/>
+  <!-- Toast crust bottom -->
+  <rect x="370" y="405" width="284" height="35" rx="12" fill="#7C2D12"/>
+
+  <!-- Clock body (large, centered lower) -->
+  <circle cx="512" cy="640" r="310" fill="#1E293B" stroke="#334155" stroke-width="8"/>
+  <!-- Clock face -->
+  <circle cx="512" cy="640" r="280" fill="url(#clockFace)"/>
+  <!-- Amber accent ring -->
+  <circle cx="512" cy="640" r="280" fill="none" stroke="#F59E0B" stroke-width="16"/>
+
+  <!-- Hour marks -->
+  <line x1="512" y1="370" x2="512" y2="410" stroke="#1E293B" stroke-width="14" stroke-linecap="round"/>
+  <line x1="782" y1="640" x2="742" y2="640" stroke="#1E293B" stroke-width="14" stroke-linecap="round"/>
+  <line x1="512" y1="910" x2="512" y2="870" stroke="#1E293B" stroke-width="14" stroke-linecap="round"/>
+  <line x1="242" y1="640" x2="282" y2="640" stroke="#1E293B" stroke-width="14" stroke-linecap="round"/>
+
+  <!-- Minor ticks -->
+  <line x1="647" y1="379" x2="638" y2="394" stroke="#94A3B8" stroke-width="7" stroke-linecap="round"/>
+  <line x1="752" y1="479" x2="737" y2="488" stroke="#94A3B8" stroke-width="7" stroke-linecap="round"/>
+  <line x1="772" y1="775" x2="757" y2="766" stroke="#94A3B8" stroke-width="7" stroke-linecap="round"/>
+  <line x1="647" y1="901" x2="638" y2="886" stroke="#94A3B8" stroke-width="7" stroke-linecap="round"/>
+  <line x1="377" y1="901" x2="386" y2="886" stroke="#94A3B8" stroke-width="7" stroke-linecap="round"/>
+  <line x1="252" y1="775" x2="267" y2="766" stroke="#94A3B8" stroke-width="7" stroke-linecap="round"/>
+  <line x1="272" y1="479" x2="287" y2="488" stroke="#94A3B8" stroke-width="7" stroke-linecap="round"/>
+  <line x1="377" y1="379" x2="386" y2="394" stroke="#94A3B8" stroke-width="7" stroke-linecap="round"/>
+
+  <!-- Hour hand -->
+  <line x1="512" y1="640" x2="430" y2="530" stroke="#0F172A" stroke-width="22" stroke-linecap="round"/>
+  <!-- Minute hand -->
+  <line x1="512" y1="640" x2="600" y2="430" stroke="#0F172A" stroke-width="14" stroke-linecap="round"/>
+  <!-- Second hand -->
+  <line x1="512" y1="640" x2="512" y2="790" stroke="#EF4444" stroke-width="6" stroke-linecap="round"/>
+  <line x1="512" y1="640" x2="512" y2="580" stroke="#EF4444" stroke-width="6" stroke-linecap="round"/>
+  <!-- Center -->
+  <circle cx="512" cy="640" r="18" fill="#0F172A"/>
+  <circle cx="512" cy="640" r="8" fill="#F59E0B"/>
+</svg>

@@ -11,10 +11,12 @@ import { FuseV1Options, FuseVersion } from '@electron/fuses';
 const config: ForgeConfig = {
   packagerConfig: {
     asar: true,
+    name: 'ToastTime',
+    icon: './assets/icons/mac/icon',
   },
   rebuildConfig: {},
   makers: [
-    new MakerSquirrel({}, ['win32']),
+    new MakerSquirrel({ iconUrl: 'https://raw.githubusercontent.com/bjbyrne/toastmaster-timer/main/assets/icons/win/icon.ico', setupIcon: './assets/icons/win/icon.ico' }, ['win32']),
     new MakerDMG({}, ['darwin']),
     new MakerZIP({}, ['win32']),
     new MakerRpm({}, ['linux']),

@@ -1,4 +1,4 @@
-import { app, BrowserWindow } from 'electron';
+import { app, BrowserWindow, nativeImage } from 'electron';
 import path from 'node:path';
 import started from 'electron-squirrel-startup';
 
@@ -8,9 +8,18 @@ if (started) {
 
 const createWindow = () => {
   const isMac = process.platform === 'darwin';
+
+  // Set dock/taskbar icon (especially visible in dev mode)
+  const iconPath = path.join(__dirname, '..', '..', 'assets', 'icons', isMac ? 'mac/icon.icns' : 'win/icon.ico');
+  try {
+    const icon = nativeImage.createFromPath(iconPath);
+    if (!icon.isEmpty()) {
+      if (isMac && app.dock) app.dock.setIcon(icon);
+    }
+  } catch (_) { /* ignore if icon missing */ }
   const mainWindow = new BrowserWindow({
     width: 300,
-    height: isMac ? 390 : 425,
+    height: isMac ? 430 : 465,
     resizable: false,
     alwaysOnTop: true,
     titleBarStyle: isMac ? 'hiddenInset' : 'default',

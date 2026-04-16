@@ -1,0 +1,71 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#92400E"/>
+    </linearGradient>
+    <linearGradient id="toastBody" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FDE68A"/>
+      <stop offset="60%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#B45309"/>
+    </linearGradient>
+    <linearGradient id="crust" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#92400E"/>
+      <stop offset="100%" stop-color="#78350F"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Rounded square background -->
+  <rect width="1024" height="1024" rx="180" fill="url(#bg)"/>
+
+  <!-- Toast slice body -->
+  <rect x="192" y="340" width="640" height="480" rx="32" fill="url(#toastBody)"/>
+  <!-- Toast rounded top (the dome of a bread slice) -->
+  <ellipse cx="512" cy="340" rx="320" ry="140" fill="url(#toastBody)"/>
+  <!-- Crust strip at bottom -->
+  <rect x="192" y="760" width="640" height="60" rx="20" fill="url(#crust)"/>
+  <!-- Crust side lines -->
+  <rect x="192" y="340" width="32" height="420" rx="8" fill="url(#crust)" opacity="0.6"/>
+  <rect x="800" y="340" width="32" height="420" rx="8" fill="url(#crust)" opacity="0.6"/>
+
+  <!-- Clock face -->
+  <circle cx="512" cy="530" r="185" fill="white" opacity="0.95"/>
+  <circle cx="512" cy="530" r="172" fill="white"/>
+  <circle cx="512" cy="530" r="185" fill="none" stroke="#92400E" stroke-width="8"/>
+
+  <!-- Hour tick marks (12, 3, 6, 9) -->
+  <line x1="512" y1="358" x2="512" y2="388" stroke="#78350F" stroke-width="10" stroke-linecap="round"/>
+  <line x1="684" y1="530" x2="654" y2="530" stroke="#78350F" stroke-width="10" stroke-linecap="round"/>
+  <line x1="512" y1="702" x2="512" y2="672" stroke="#78350F" stroke-width="10" stroke-linecap="round"/>
+  <line x1="340" y1="530" x2="370" y2="530" stroke="#78350F" stroke-width="10" stroke-linecap="round"/>
+
+  <!-- Minor ticks -->
+  <line x1="598" y1="363" x2="591" y2="381" stroke="#B45309" stroke-width="6" stroke-linecap="round"/>
+  <line x1="670" y1="434" x2="652" y2="441" stroke="#B45309" stroke-width="6" stroke-linecap="round"/>
+  <line x1="670" y1="626" x2="652" y2="619" stroke="#B45309" stroke-width="6" stroke-linecap="round"/>
+  <line x1="598" y1="697" x2="591" y2="679" stroke="#B45309" stroke-width="6" stroke-linecap="round"/>
+  <line x1="426" y1="697" x2="433" y2="679" stroke="#B45309" stroke-width="6" stroke-linecap="round"/>
+  <line x1="354" y1="626" x2="372" y2="619" stroke="#B45309" stroke-width="6" stroke-linecap="round"/>
+  <line x1="354" y1="434" x2="372" y2="441" stroke="#B45309" stroke-width="6" stroke-linecap="round"/>
+  <line x1="426" y1="363" x2="433" y2="381" stroke="#B45309" stroke-width="6" stroke-linecap="round"/>
+
+  <!-- Hour hand (~10 o'clock) -->
+  <line x1="512" y1="530" x2="448" y2="430" stroke="#1C1917" stroke-width="18" stroke-linecap="round"/>
+  <!-- Minute hand (~2 o'clock) -->
+  <line x1="512" y1="530" x2="582" y2="385" stroke="#1C1917" stroke-width="12" stroke-linecap="round"/>
+  <!-- Second hand (thin red, ~6 o'clock) -->
+  <line x1="512" y1="530" x2="512" y2="660" stroke="#DC2626" stroke-width="5" stroke-linecap="round"/>
+  <line x1="512" y1="530" x2="512" y2="465" stroke="#DC2626" stroke-width="5" stroke-linecap="round"/>
+
+  <!-- Center cap -->
+  <circle cx="512" cy="530" r="14" fill="#1C1917"/>
+  <circle cx="512" cy="530" r="6" fill="#DC2626"/>
+
+  <!-- Traffic light dots at bottom -->
+  <circle cx="382" cy="862" r="36" fill="#166534" opacity="0.3"/>
+  <circle cx="382" cy="862" r="26" fill="#22C55E"/>
+  <circle cx="512" cy="862" r="36" fill="#713F12" opacity="0.3"/>
+  <circle cx="512" cy="862" r="26" fill="#EAB308"/>
+  <circle cx="642" cy="862" r="36" fill="#7F1D1D" opacity="0.3"/>
+  <circle cx="642" cy="862" r="26" fill="#EF4444"/>
+</svg>
