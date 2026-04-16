@@ -16,7 +16,7 @@ const config: ForgeConfig = {
   },
   rebuildConfig: {},
   makers: [
-    new MakerSquirrel({ iconUrl: 'https://raw.githubusercontent.com/bjbyrne/toastmaster-timer/main/assets/icons/win/icon.ico', setupIcon: './assets/icons/win/icon.ico' }, ['win32']),
+    new MakerSquirrel({ iconUrl: 'https://raw.githubusercontent.com/bjbyrne/toasttime/main/assets/icons/win/icon.ico', setupIcon: './assets/icons/win/icon.ico' }, ['win32']),
     new MakerDMG({}, ['darwin']),
     new MakerZIP({}, ['win32']),
     new MakerRpm({}, ['linux']),

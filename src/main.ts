@@ -9,7 +9,7 @@ if (started) {
 const createWindow = () => {
   const isMac = process.platform === 'darwin';
 
-  // Set dock/taskbar icon (especially visible in dev mode)
+  // Set dock icon on Mac (dev mode)
   const iconPath = path.join(__dirname, '..', '..', 'assets', 'icons', isMac ? 'mac/icon.icns' : 'win/icon.ico');
   try {
     const icon = nativeImage.createFromPath(iconPath);
@@ -19,10 +19,12 @@ const createWindow = () => {
   } catch (_) { /* ignore if icon missing */ }
   const mainWindow = new BrowserWindow({
     width: 300,
-    height: isMac ? 430 : 465,
+    height: isMac ? 430 : 500,
     resizable: false,
     alwaysOnTop: true,
+    title: 'ToastTime',
     titleBarStyle: isMac ? 'hiddenInset' : 'default',
+    icon: iconPath,
     backgroundColor: '#111827',
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
