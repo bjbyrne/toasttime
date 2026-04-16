@@ -12,7 +12,7 @@ const config: ForgeConfig = {
   packagerConfig: {
     asar: true,
     name: 'ToastTime',
-    icon: './assets/icons/mac/icon',
+    icon: './assets/icons/icon',
   },
   rebuildConfig: {},
   makers: [

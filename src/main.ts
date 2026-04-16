@@ -1,4 +1,4 @@
-import { app, BrowserWindow, nativeImage } from 'electron';
+import { app, BrowserWindow, nativeImage, Menu } from 'electron';
 import path from 'node:path';
 import started from 'electron-squirrel-startup';
 
@@ -6,11 +6,13 @@ if (started) {
   app.quit();
 }
 
+Menu.setApplicationMenu(null);
+
 const createWindow = () => {
   const isMac = process.platform === 'darwin';
 
   // Set dock icon on Mac (dev mode)
-  const iconPath = path.join(__dirname, '..', '..', 'assets', 'icons', isMac ? 'mac/icon.icns' : 'win/icon.ico');
+  const iconPath = path.join(__dirname, '..', '..', 'assets', 'icons', isMac ? 'icon.icns' : 'icon.ico');
   try {
     const icon = nativeImage.createFromPath(iconPath);
     if (!icon.isEmpty()) {

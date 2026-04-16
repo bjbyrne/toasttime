@@ -63,7 +63,7 @@ Go to the [**Actions tab**](https://github.com/bjbyrne/toasttime/actions), open 
 
 | Role | Min | Warn | Max |
 |------|-----|------|-----|
-| Table Topics | 1:00 | 1:30 | 2:00 |
+| Impromptu Speech | 1:00 | 1:30 | 2:00 |
 | Ice Breaker | 4:00 | 5:00 | 6:00 |
 | Prepared Speech (5–7 min) | 5:00 | 6:00 | 7:00 |
 | Prepared Speech (7–9 min) | 7:00 | 8:00 | 9:00 |
