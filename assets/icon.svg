@@ -1,71 +1,106 @@
 <svg width="1024" height="1024" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
   <defs>
+    <!-- Dark rounded background -->
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#F59E0B"/>
+      <stop offset="0%" stop-color="#1C1917"/>
+      <stop offset="100%" stop-color="#292524"/>
+    </linearGradient>
+    <!-- Crust color -->
+    <linearGradient id="crust" x1="0" y1="0" x2="0.3" y2="1">
+      <stop offset="0%" stop-color="#D97706"/>
+      <stop offset="40%" stop-color="#B45309"/>
       <stop offset="100%" stop-color="#92400E"/>
     </linearGradient>
-    <linearGradient id="toastBody" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#FDE68A"/>
-      <stop offset="60%" stop-color="#F59E0B"/>
-      <stop offset="100%" stop-color="#B45309"/>
+    <!-- Inner bread (cream/pale yellow) -->
+    <linearGradient id="bread" x1="0.1" y1="0" x2="0.9" y2="1">
+      <stop offset="0%" stop-color="#FEF9EC"/>
+      <stop offset="40%" stop-color="#FEF0C7"/>
+      <stop offset="100%" stop-color="#FDE68A"/>
     </linearGradient>
-    <linearGradient id="crust" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#92400E"/>
-      <stop offset="100%" stop-color="#78350F"/>
+    <!-- Highlight sheen -->
+    <linearGradient id="sheen" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="white" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="white" stop-opacity="0"/>
     </linearGradient>
   </defs>
 
-  <!-- Rounded square background -->
-  <rect width="1024" height="1024" rx="180" fill="url(#bg)"/>
+  <!-- App icon background -->
+  <rect width="1024" height="1024" rx="200" fill="url(#bg)"/>
 
-  <!-- Toast slice body -->
-  <rect x="192" y="340" width="640" height="480" rx="32" fill="url(#toastBody)"/>
-  <!-- Toast rounded top (the dome of a bread slice) -->
-  <ellipse cx="512" cy="340" rx="320" ry="140" fill="url(#toastBody)"/>
-  <!-- Crust strip at bottom -->
-  <rect x="192" y="760" width="640" height="60" rx="20" fill="url(#crust)"/>
-  <!-- Crust side lines -->
-  <rect x="192" y="340" width="32" height="420" rx="8" fill="url(#crust)" opacity="0.6"/>
-  <rect x="800" y="340" width="32" height="420" rx="8" fill="url(#crust)" opacity="0.6"/>
+  <!-- TOAST SHAPE: characteristic bread slice silhouette -->
+  <!-- Outer crust shape: squarish with rounded corners, slight dome on top, tapers slightly at shoulders -->
+  <path d="
+    M 512 108
+    C 620 108, 720 128, 776 178
+    C 820 218, 836 268, 836 320
+    L 836 790
+    C 836 830, 804 862, 764 862
+    L 260 862
+    C 220 862, 188 830, 188 790
+    L 188 320
+    C 188 268, 204 218, 248 178
+    C 304 128, 404 108, 512 108
+    Z
+  " fill="url(#crust)"/>
 
-  <!-- Clock face -->
-  <circle cx="512" cy="530" r="185" fill="white" opacity="0.95"/>
-  <circle cx="512" cy="530" r="172" fill="white"/>
-  <circle cx="512" cy="530" r="185" fill="none" stroke="#92400E" stroke-width="8"/>
+  <!-- Inner bread face (inset from crust) -->
+  <path d="
+    M 512 158
+    C 608 158, 696 175, 746 218
+    C 782 250, 796 292, 796 336
+    L 796 790
+    C 796 808, 782 822, 764 822
+    L 260 822
+    C 242 822, 228 808, 228 790
+    L 228 336
+    C 228 292, 242 250, 278 218
+    C 328 175, 416 158, 512 158
+    Z
+  " fill="url(#bread)"/>
 
-  <!-- Hour tick marks (12, 3, 6, 9) -->
-  <line x1="512" y1="358" x2="512" y2="388" stroke="#78350F" stroke-width="10" stroke-linecap="round"/>
-  <line x1="684" y1="530" x2="654" y2="530" stroke="#78350F" stroke-width="10" stroke-linecap="round"/>
-  <line x1="512" y1="702" x2="512" y2="672" stroke="#78350F" stroke-width="10" stroke-linecap="round"/>
-  <line x1="340" y1="530" x2="370" y2="530" stroke="#78350F" stroke-width="10" stroke-linecap="round"/>
+  <!-- Subtle highlight sheen (diagonal) -->
+  <path d="
+    M 512 158
+    C 608 158, 696 175, 746 218
+    C 782 250, 796 292, 796 336
+    L 796 560
+    L 440 158
+    Z
+  " fill="url(#sheen)"/>
+
+  <!-- Clock face (white circle centered on bread) -->
+  <circle cx="512" cy="510" r="200" fill="white" opacity="0.92"/>
+  <circle cx="512" cy="510" r="200" fill="none" stroke="#C2855A" stroke-width="10"/>
+
+  <!-- Hour tick marks -->
+  <line x1="512" y1="318" x2="512" y2="348" stroke="#7C4A1E" stroke-width="12" stroke-linecap="round"/>
+  <line x1="704" y1="510" x2="674" y2="510" stroke="#7C4A1E" stroke-width="12" stroke-linecap="round"/>
+  <line x1="512" y1="702" x2="512" y2="672" stroke="#7C4A1E" stroke-width="12" stroke-linecap="round"/>
+  <line x1="320" y1="510" x2="350" y2="510" stroke="#7C4A1E" stroke-width="12" stroke-linecap="round"/>
 
   <!-- Minor ticks -->
-  <line x1="598" y1="363" x2="591" y2="381" stroke="#B45309" stroke-width="6" stroke-linecap="round"/>
-  <line x1="670" y1="434" x2="652" y2="441" stroke="#B45309" stroke-width="6" stroke-linecap="round"/>
-  <line x1="670" y1="626" x2="652" y2="619" stroke="#B45309" stroke-width="6" stroke-linecap="round"/>
-  <line x1="598" y1="697" x2="591" y2="679" stroke="#B45309" stroke-width="6" stroke-linecap="round"/>
-  <line x1="426" y1="697" x2="433" y2="679" stroke="#B45309" stroke-width="6" stroke-linecap="round"/>
-  <line x1="354" y1="626" x2="372" y2="619" stroke="#B45309" stroke-width="6" stroke-linecap="round"/>
-  <line x1="354" y1="434" x2="372" y2="441" stroke="#B45309" stroke-width="6" stroke-linecap="round"/>
-  <line x1="426" y1="363" x2="433" y2="381" stroke="#B45309" stroke-width="6" stroke-linecap="round"/>
+  <line x1="610" y1="326" x2="603" y2="340" stroke="#C2855A" stroke-width="7" stroke-linecap="round"/>
+  <line x1="686" y1="402" x2="672" y2="409" stroke="#C2855A" stroke-width="7" stroke-linecap="round"/>
+  <line x1="686" y1="618" x2="672" y2="611" stroke="#C2855A" stroke-width="7" stroke-linecap="round"/>
+  <line x1="610" y1="694" x2="603" y2="680" stroke="#C2855A" stroke-width="7" stroke-linecap="round"/>
+  <line x1="414" y1="694" x2="421" y2="680" stroke="#C2855A" stroke-width="7" stroke-linecap="round"/>
+  <line x1="338" y1="618" x2="352" y2="611" stroke="#C2855A" stroke-width="7" stroke-linecap="round"/>
+  <line x1="338" y1="402" x2="352" y2="409" stroke="#C2855A" stroke-width="7" stroke-linecap="round"/>
+  <line x1="414" y1="326" x2="421" y2="340" stroke="#C2855A" stroke-width="7" stroke-linecap="round"/>
 
-  <!-- Hour hand (~10 o'clock) -->
-  <line x1="512" y1="530" x2="448" y2="430" stroke="#1C1917" stroke-width="18" stroke-linecap="round"/>
-  <!-- Minute hand (~2 o'clock) -->
-  <line x1="512" y1="530" x2="582" y2="385" stroke="#1C1917" stroke-width="12" stroke-linecap="round"/>
-  <!-- Second hand (thin red, ~6 o'clock) -->
-  <line x1="512" y1="530" x2="512" y2="660" stroke="#DC2626" stroke-width="5" stroke-linecap="round"/>
-  <line x1="512" y1="530" x2="512" y2="465" stroke="#DC2626" stroke-width="5" stroke-linecap="round"/>
+  <!-- Hour hand (~10) -->
+  <line x1="512" y1="510" x2="442" y2="405" stroke="#3B1C08" stroke-width="20" stroke-linecap="round"/>
+  <!-- Minute hand (~2) -->
+  <line x1="512" y1="510" x2="582" y2="365" stroke="#3B1C08" stroke-width="13" stroke-linecap="round"/>
+  <!-- Second hand -->
+  <line x1="512" y1="510" x2="512" y2="650" stroke="#DC2626" stroke-width="5" stroke-linecap="round"/>
+  <line x1="512" y1="510" x2="512" y2="455" stroke="#DC2626" stroke-width="5" stroke-linecap="round"/>
+  <!-- Center -->
+  <circle cx="512" cy="510" r="14" fill="#3B1C08"/>
+  <circle cx="512" cy="510" r="6" fill="#DC2626"/>
 
-  <!-- Center cap -->
-  <circle cx="512" cy="530" r="14" fill="#1C1917"/>
-  <circle cx="512" cy="530" r="6" fill="#DC2626"/>
-
-  <!-- Traffic light dots at bottom -->
-  <circle cx="382" cy="862" r="36" fill="#166534" opacity="0.3"/>
-  <circle cx="382" cy="862" r="26" fill="#22C55E"/>
-  <circle cx="512" cy="862" r="36" fill="#713F12" opacity="0.3"/>
-  <circle cx="512" cy="862" r="26" fill="#EAB308"/>
-  <circle cx="642" cy="862" r="36" fill="#7F1D1D" opacity="0.3"/>
-  <circle cx="642" cy="862" r="26" fill="#EF4444"/>
+  <!-- Traffic light dots -->
+  <circle cx="382" cy="920" r="30" fill="#22C55E"/>
+  <circle cx="512" cy="920" r="30" fill="#EAB308"/>
+  <circle cx="642" cy="920" r="30" fill="#EF4444"/>
 </svg>
